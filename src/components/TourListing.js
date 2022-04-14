@@ -16,11 +16,32 @@ import {
     Avatar
   } from '@chakra-ui/react';
   import nature from '../img/micheile-com-SxxstJ3ByIg-unsplash.jpg'
+  import React, { useState, useEffect } from 'react';
+  import axios from 'axios';
   import Tour from './Tour';
   
-  export default function CallToActionWithVideo() {
+  export default function ShowTourListings() {
+
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      axios.get('https://cors-anywhere-herokuapp.com/https://w3.winona.edu/locations/api/themes', {
+        "Content-Type": "application/xml; charset=utf-8"
+        }
+       )
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err))
+    })
+
     return (
+      
       <Container maxW={'7xl'}>
+        <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me
+        </button>
+        </div>
         <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
