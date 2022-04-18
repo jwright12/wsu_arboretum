@@ -30,12 +30,12 @@ const Tour = (props) => {
           p={6}
           overflow={'hidden'}>
           <Box
-            h={'210px'}
+            h={'relative'}
             bg={'gray.100'}
             mt={-6}
             mx={-6}
             mb={6}
-            pos={'relative'}>
+            pos={'100%'}>
             <Image
               src={nature}
               layout={'fill'}
@@ -48,13 +48,13 @@ const Tour = (props) => {
               fontWeight={800}
               fontSize={'sm'}
               letterSpacing={1.1}>
-              Blog
+              
             </Text>
             <Heading
               color={useColorModeValue('gray.700', 'white')}
               fontSize={'2xl'}
               fontFamily={'body'}>
-              Boost your conversion rate
+              Tree tour #
             </Heading>
             <Text color={'gray.500'}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
