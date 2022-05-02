@@ -9,7 +9,7 @@ const NavBar = (props) => {
   
     return (
       <NavBarContainer {...props}>
-        <Logo w="75px"/>
+        <Logo w="200px"/>
         <MenuToggle toggle={toggle} isOpen={isOpen} />
         <MenuLinks isOpen={isOpen} />
       </NavBarContainer>
@@ -53,7 +53,7 @@ const NavBar = (props) => {
   const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     return (
       <Link href={to}>
-        <Text color="white" display="block" {...rest}>
+        <Text fontSize='xl' color="white" display="block" {...rest}>
           {children}
         </Text>
       </Link>
@@ -70,7 +70,7 @@ const NavBar = (props) => {
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Stack
-          spacing={8}
+          spacing={16}
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "row", "row", "row"]} // This makes the MenuItems group in specific directions based on the size of the screen
@@ -103,10 +103,10 @@ const NavBar = (props) => {
       <Flex
         as="nav"
         align="center"
-        justify="space-between"
+        justify={"space-between"}
         wrap="wrap"
         w="100%"
-        mb={8}
+        mb={10}
         p={8}
         bg={["primary.700"]}
         color={["primary.700"]}
