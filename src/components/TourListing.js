@@ -65,7 +65,8 @@ import {
           <Heading
             lineHeight={1.2}
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}>
+            fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}
+            as='u'>
             Take a Tour
           </Heading>
         </Center>
