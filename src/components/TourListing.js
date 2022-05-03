@@ -14,10 +14,13 @@ import {
     useColorModeValue,
     Center,
     Avatar,
-    SimpleGrid
+    SimpleGrid,
+    ChakraBox
   } from '@chakra-ui/react';
   import nature from '../img/micheile-com-SxxstJ3ByIg-unsplash.jpg'
   import Tour from './Tour';
+  import {  chakra } from '@chakra-ui/react';
+  import { motion, isValidMotionProp } from 'framer-motion';
   import tour_data from '../data/tours.xml';
   import axios from 'axios';
   import React from 'react';
@@ -36,10 +39,40 @@ import {
      });
     }, []);
 
-
+    const ChakraBox = chakra(motion.div, {
+      shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === 'children',
+    });
 
     return (
       <Container maxW={'7xl'}>
+        <ChakraBox
+          animate={{
+            scale: [1, 2, 2, 1, 1],
+            rotate: [0, 0, 360, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          // @ts-ignore no problem in operation, although type error appears.
+            transition={{
+            duration: 7,
+            ease: "easeInOut",
+            repeat: "1",
+
+          }}
+            padding="2"
+            bgGradient="linear(to-l, primary.700, primary.800)"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width="55px"
+            height="55px"
+            color='white'
+            scale= "2"
+            float="right"
+            margin="35px"
+          >
+          WSU Tours 
+        </ChakraBox>
+
         <Center
           spacing={{ base: 16, md: 15 }}
           padding='2rem'
@@ -60,6 +93,7 @@ import {
                 Field Guide
               </Text>
             </Heading>
+            
             <Text color={'gray.800'}>
               The Landscape Arboretum at Winona State University is a living classroom and laboratory for the WSU community and all those who visit campus. 
               We are committed to being a supportive environment for student and life-long learning.

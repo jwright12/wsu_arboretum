@@ -15,13 +15,14 @@ const Footer = (props) => {
             direction="column"
             boxShadow="0 -1px 6px -1px rgba(0, 0, 0, 0.1)"
             padding={4}
+
         >
             <Center>
                 <Image src={wsu} width="350px"/>
             </Center>
             <Flex width="100%" justifyContent="center" wrap="wrap">
             <Text width="50%" textAlign="center" color="white" fontSize="sm">
-               Created by Joe Wright, Tanyi BeSong, and Martin Liu
+               Created by Joe Wright, Tanyi Besong, and Martin Liu
             </Text>
             </Flex>
         </Flex>
