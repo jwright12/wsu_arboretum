@@ -59,6 +59,7 @@ const Tour = (props) => {
               color={useColorModeValue('gray.700', 'white')}
               fontSize={'2xl'}
               fontFamily={'body'}
+              as={'u'}
               >
               Tree tour #
             </Heading>
