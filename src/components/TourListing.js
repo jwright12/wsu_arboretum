@@ -18,8 +18,24 @@ import {
   } from '@chakra-ui/react';
   import nature from '../img/micheile-com-SxxstJ3ByIg-unsplash.jpg'
   import Tour from './Tour';
+  import tour_data from '../data/tours.xml';
+  import axios from 'axios';
+  import React from 'react';
   
   const TourListing = () => {
+    const [tours, setTours] = React.useState([]);
+
+    React.useEffect(() => {
+      axios.get(tour_data, {
+        "Content-Type": "application/xml; charset=utf-8"
+     })
+     .then((response) => {
+        console.log('Your xml file as string', response.data);
+     });
+    }, []);
+
+
+
     return (
       <Container maxW={'7xl'}>
         <Center
