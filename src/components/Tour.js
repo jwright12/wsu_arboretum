@@ -19,7 +19,7 @@ import { animations } from 'framer-motion';
   import nature from '../img/micheile-com-SxxstJ3ByIg-unsplash.jpg'
 
  
-const Tour = ({name, desc}) => {
+const Tour = ({name, desc, index}) => {
     return (
       <Flex mt={"25px"}>
         <Stack 
