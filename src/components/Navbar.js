@@ -9,7 +9,7 @@ const NavBar = (props) => {
   
     return (
       <NavBarContainer {...props}>
-        <Logo w="200px"/>
+        <Logo w="350px"/>
         <MenuToggle toggle={toggle} isOpen={isOpen} />
         <MenuLinks isOpen={isOpen} />
       </NavBarContainer>
@@ -53,7 +53,7 @@ const NavBar = (props) => {
   const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     return (
       <Link href={to}>
-        <Text fontSize='xl' color="white" display="block" {...rest}>
+        <Text fontSize='2xl' color="white" display="block" {...rest}>
           {children}
         </Text>
       </Link>

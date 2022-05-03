@@ -1,6 +1,14 @@
+import React from "react";
+import { Box, Heading, Image } from "@chakra-ui/react";
+import logo from "../img/arboretum_logo.jpg"
+
 const Directory = (props) => {
     return (
-        <h1>Directory</h1>
+        <Box h="100%">
+            <Heading>
+                Directory under construction...
+            </Heading>
+        </Box>
     );
 }
 
