@@ -21,6 +21,7 @@ import {
   import tour_data from '../data/tours.xml';
   import axios from 'axios';
   import React from 'react';
+  import XMLParser from 'react-xml-parser';
   
   const TourListing = () => {
     const [tours, setTours] = React.useState([]);
@@ -30,7 +31,8 @@ import {
         "Content-Type": "application/xml; charset=utf-8"
      })
      .then((response) => {
-        console.log('Your xml file as string', response.data);
+        var xml = new XMLParser().parseFromString(response.data);
+        setTours(xml.children)
      });
     }, []);
 
@@ -86,18 +88,13 @@ import {
             Take a Tour
           </Heading>
         </Center>
-        
-        
         <SimpleGrid  columns={[1, 2, 3]} spacingX={'60px'} spacingY={'60px'}> 
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
-        <Tour />
+
+          {tours.map((element, index) => (
+              <Tour key={index} name={element.children[3].value} desc={element.children[0].value} />
+          ))}
+        
+        
         </SimpleGrid>
       </Container>
     );
