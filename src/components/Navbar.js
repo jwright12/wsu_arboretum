@@ -79,20 +79,7 @@ const NavBar = (props) => {
           <MenuItem to="/">Home</MenuItem>
           <MenuItem to="/tours">Tours </MenuItem>
           <MenuItem to="/directory">Directory </MenuItem>
-          <MenuItem to="/about">About </MenuItem>
-          <MenuItem to="/contact" isLast>
-            <Button
-              size="sm"
-              rounded="md"
-              color={["primary.700"]}
-              bg={["white"]}
-              _hover={{
-                bg: ["primary.300"]
-              }}
-            >
-              Contact Us
-            </Button>
-          </MenuItem>
+          <MenuItem to="/about" isLast>About </MenuItem>
         </Stack>
       </Box>
     );
